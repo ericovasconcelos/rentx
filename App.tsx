@@ -11,10 +11,10 @@ import {
   Inter_500Medium,
 
 } from '@expo-google-fonts/inter';
-import { CarDetails } from './src/screens/CarDetails';
 import AppLoading from 'expo-app-loading';
 import { ThemeProvider } from 'styled-components';
 import theme from './src/styles/theme';
+import { AppProvider } from './src/hooks';
 
 import { Routes } from './src/routes';
 
@@ -34,7 +34,9 @@ export default function App() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <ThemeProvider theme={theme} >
-        <Routes />
+        <AppProvider>
+          <Routes />
+        </AppProvider>
       </ThemeProvider>
     </GestureHandlerRootView>
   );
