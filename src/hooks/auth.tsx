@@ -39,16 +39,19 @@ function AuthProvider({ children }: AuthProviderProps) {
     const [data, setData] = useState<AuthState>({} as AuthState);
 
     async function signIn({ email, password }: SignInCredentials) {
-        const response = await api.post('/sessions', {
-            email,
-            password
-        });
-        console.log(response)
-        const { token, user } = response.data;
+        try {
+            const response = await api.post('/sessions', {
+                email,
+                password
+            });
+            const { token, user } = response.data;
 
-        api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
+            api.defaults.headers.common['Authorization'] = `Bearer ${token}`;
 
-        setData({token, user});
+            setData({ token, user });
+        } catch (error) {
+            console.log(error.message);
+        }
     }
 
     return (
@@ -61,7 +64,7 @@ function AuthProvider({ children }: AuthProviderProps) {
     )
 }
 
-function useAuth():AuthContextData {
+function useAuth(): AuthContextData {
     const context = useContext(AuthContext);
 
     if (!context) {
