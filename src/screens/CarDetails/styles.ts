@@ -44,7 +44,7 @@ export const Brand = styled.Text`
 export const Name = styled.Text`
     font-family: ${({ theme }) => theme.fonts.secondary_500};
     color: ${({ theme }) => theme.colors.title};
-    font-size: ${RFValue(25)}px;
+    font-size: ${RFValue(20)}px;
 `;
 
 export const Rent = styled.View``;

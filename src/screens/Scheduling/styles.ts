@@ -25,7 +25,7 @@ export const Header = styled.View`
 export const Title = styled.Text`
     color: ${({ theme }) => theme.colors.shape};
     font-family: ${({ theme }) => theme.fonts.secondary_600};
-    font-size: ${RFValue(34)}px;
+    font-size: ${RFValue(30)}px;
 
     margin-top: 24px;
 `;
@@ -47,13 +47,13 @@ export const DateInfo = styled.View`
 export const DateTitle = styled.Text`
     color: ${({ theme }) => theme.colors.text};
     font-family: ${({ theme }) => theme.fonts.secondary_500};
-    font-size: ${RFValue(10)}px;
+    font-size: ${RFValue(8)}px;
 `;
 
 export const DateValue = styled.Text<DateValueProps>`
   color: ${({ theme }) => theme.colors.shape};
     font-family: ${({ theme }) => theme.fonts.primary_500};
-    font-size: ${RFValue(15)}px;
+    font-size: ${RFValue(10)}px;
 
     ${({ selected, theme }) => selected && css`
         border-bottom-width: 1px;

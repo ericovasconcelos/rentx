@@ -27,7 +27,6 @@ import {
     Accessories,
     Footer
 } from './styles';
-import { useTheme } from 'styled-components';
 import { useNavigation, useRoute } from '@react-navigation/native';
 import { CarDTO } from '../../dtos/CarDTO';
 import { getAccessoryIcons } from '../../utils/getAccessoryIcons';
@@ -40,23 +39,22 @@ interface Params {
 }
 
 export function CarDetails() {
-    const eixoY = useSharedValue(0);
-    const animationHeight = RFValue(200);
-    const them = useTheme();
+    const animationHeight = 250;
 
+    const eixoY = useSharedValue(0);
     const handleScroll = useAnimatedScrollHandler(event => {
         eixoY.value = event.contentOffset.y;
     });
 
     const imageAnimatedStyle = useAnimatedStyle(() => {
         return {
-            height: interpolate(eixoY.value, [0, 70], [animationHeight, 75], Extrapolate.CLAMP),
+            height: interpolate(eixoY.value, [0, 200], [animationHeight, 75], Extrapolate.CLAMP),
         }
     })
 
     const carAnimatedStyle = useAnimatedStyle(() => {
         return {
-            opacity: interpolate(eixoY.value, [0, 70], [1, 0], Extrapolate.CLAMP),
+            opacity: interpolate(eixoY.value, [0, 100], [1, 0], Extrapolate.CLAMP),
         }
     })
 
@@ -81,11 +79,12 @@ export function CarDetails() {
                 barStyle="dark-content"
             />
             <Animated.View style={[
-                imageAnimatedStyle
-                ]}>
-               
-
-                <Animated.View style={carAnimatedStyle }>
+                imageAnimatedStyle,
+                {
+                    height: animationHeight
+                }
+            ]}>
+                <Animated.View style={carAnimatedStyle}>
                     <CarImage>
                         <ImageSlider
                             imagesUrl={car.photos}
@@ -104,7 +103,7 @@ export function CarDetails() {
                 }}
                 showsVerticalScrollIndicator={false}
                 onScroll={handleScroll}
-                scrollEventThrottle={20}
+                scrollEventThrottle={16}
             >
                 <Details>
                     <Description>
@@ -113,8 +112,8 @@ export function CarDetails() {
                     </Description>
 
                     <Rent>
-                        <Period>{car.rent.period}</Period>
-                        <Price>R$ {car.rent.price}</Price>
+                        <Period>{car.period}</Period>
+                        <Price>R$ {car.price}</Price>
                     </Rent>
                 </Details>
 
