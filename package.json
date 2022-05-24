@@ -12,7 +12,8 @@
   "dependencies": {
     "@expo-google-fonts/archivo": "^0.2.2",
     "@expo-google-fonts/inter": "^0.2.2",
-    "@nozbe/watermelondb": "^0.24.0",
+    "@morrowdigital/watermelondb-expo-plugin": "^1.0.0",
+    "@nozbe/watermelondb": "^0.23.0",
     "@react-navigation/bottom-tabs": "^6.3.1",
     "@react-navigation/native": "^6.0.8",
     "@react-navigation/stack": "^6.1.1",
