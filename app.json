@@ -1,7 +1,6 @@
 {
   "expo": {
     "name": "rentx",
-    "plugins": ["@morrowdigital/watermelondb-expo-plugin"],
     "slug": "rentx",
     "version": "1.0.0",
     "assetBundlePatterns": [

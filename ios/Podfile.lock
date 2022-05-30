@@ -1,26 +1,36 @@
 PODS:
   - boost-for-react-native (1.63.0)
   - DoubleConversion (1.1.6)
-  - EXApplication (4.0.1):
+  - EXApplication (4.0.2):
     - ExpoModulesCore
-  - EXConstants (13.0.1):
+  - EXConstants (12.1.3):
     - ExpoModulesCore
-  - EXErrorRecovery (3.0.4):
+  - EXErrorRecovery (3.0.5):
     - ExpoModulesCore
-  - EXFileSystem (13.1.2):
+  - EXFileSystem (13.0.3):
     - ExpoModulesCore
   - EXFont (10.0.4):
     - ExpoModulesCore
-  - EXKeepAwake (10.0.1):
+  - EXJSONUtils (0.2.1)
+  - EXKeepAwake (10.0.2):
     - ExpoModulesCore
-  - Expo (44.0.5):
+  - EXManifests (0.2.4):
+    - EXJSONUtils
+  - Expo (43.0.5):
     - ExpoModulesCore
-  - ExpoModulesCore (0.6.4):
+  - ExpoModulesCore (0.4.10):
     - React-Core
-    - ReactCommon/turbomodule/core
   - EXSplashScreen (0.14.1):
     - ExpoModulesCore
     - React-Core
+  - EXStructuredHeaders (2.0.0)
+  - EXUpdates (0.10.15):
+    - EXManifests
+    - ExpoModulesCore
+    - EXStructuredHeaders
+    - EXUpdatesInterface
+    - React-Core
+  - EXUpdatesInterface (0.4.0)
   - FBLazyVector (0.64.3)
   - FBReactNativeSpec (0.64.3):
     - RCT-Folly (= 2020.01.13.00)
@@ -358,15 +368,21 @@ DEPENDENCIES:
   - EXErrorRecovery (from `../node_modules/expo-error-recovery/ios`)
   - EXFileSystem (from `../node_modules/expo-file-system/ios`)
   - EXFont (from `../node_modules/expo-font/ios`)
+  - EXJSONUtils (from `../node_modules/expo-json-utils/ios`)
   - EXKeepAwake (from `../node_modules/expo-keep-awake/ios`)
+  - EXManifests (from `../node_modules/expo-manifests/ios`)
   - Expo (from `../node_modules/expo/ios`)
   - ExpoModulesCore (from `../node_modules/expo-modules-core/ios`)
   - EXSplashScreen (from `../node_modules/expo-splash-screen/ios`)
+  - EXStructuredHeaders (from `../node_modules/expo-structured-headers/ios`)
+  - EXUpdates (from `../node_modules/expo-updates/ios`)
+  - EXUpdatesInterface (from `../node_modules/expo-updates-interface/ios`)
   - FBLazyVector (from `../node_modules/react-native/Libraries/FBLazyVector`)
   - FBReactNativeSpec (from `../node_modules/react-native/React/FBReactNativeSpec`)
   - glog (from `../node_modules/react-native/third-party-podspecs/glog.podspec`)
   - hermes-engine (~> 0.7.2)
   - libevent (~> 2.1.12)
+  - lottie-ios (from `../node_modules/lottie-ios`)
   - lottie-react-native (from `../node_modules/lottie-react-native`)
   - RCT-Folly (from `../node_modules/react-native/third-party-podspecs/RCT-Folly.podspec`)
   - RCTRequired (from `../node_modules/react-native/Libraries/RCTRequired`)
@@ -408,7 +424,6 @@ SPEC REPOS:
     - boost-for-react-native
     - hermes-engine
     - libevent
-    - lottie-ios
 
 EXTERNAL SOURCES:
   DoubleConversion:
@@ -423,20 +438,32 @@ EXTERNAL SOURCES:
     :path: "../node_modules/expo-file-system/ios"
   EXFont:
     :path: "../node_modules/expo-font/ios"
+  EXJSONUtils:
+    :path: "../node_modules/expo-json-utils/ios"
   EXKeepAwake:
     :path: "../node_modules/expo-keep-awake/ios"
+  EXManifests:
+    :path: "../node_modules/expo-manifests/ios"
   Expo:
     :path: "../node_modules/expo/ios"
   ExpoModulesCore:
     :path: "../node_modules/expo-modules-core/ios"
   EXSplashScreen:
     :path: "../node_modules/expo-splash-screen/ios"
+  EXStructuredHeaders:
+    :path: "../node_modules/expo-structured-headers/ios"
+  EXUpdates:
+    :path: "../node_modules/expo-updates/ios"
+  EXUpdatesInterface:
+    :path: "../node_modules/expo-updates-interface/ios"
   FBLazyVector:
     :path: "../node_modules/react-native/Libraries/FBLazyVector"
   FBReactNativeSpec:
     :path: "../node_modules/react-native/React/FBReactNativeSpec"
   glog:
     :podspec: "../node_modules/react-native/third-party-podspecs/glog.podspec"
+  lottie-ios:
+    :path: "../node_modules/lottie-ios"
   lottie-react-native:
     :path: "../node_modules/lottie-react-native"
   RCT-Folly:
@@ -505,15 +532,20 @@ EXTERNAL SOURCES:
 SPEC CHECKSUMS:
   boost-for-react-native: 39c7adb57c4e60d6c5479dd8623128eb5b3f0f2c
   DoubleConversion: cf9b38bf0b2d048436d9a82ad2abe1404f11e7de
-  EXApplication: bdc8dc27713235565da1029a34385229f31b8e08
-  EXConstants: 6966f4fa7a22770dd240a66d029819ff94c748c9
-  EXErrorRecovery: deea88a01d38f8b1c1181b4e1d179b0ba0e4bb5b
-  EXFileSystem: e8013deaa114cab168a6f53be956b9334c3d02cf
+  EXApplication: 54fe5bd6268d697771645e8f1aef8b806a65247a
+  EXConstants: 6d585d93723b18d7a8c283591a335609e3bc153e
+  EXErrorRecovery: b0d7582714a2cc896e94a2308a356f94dbf14ef7
+  EXFileSystem: 99aac7962c11c680681819dd9cbca24e20e5b1e7
   EXFont: 1fb13af43dc517c01c0ff21a6e32f9f9bf2ea602
-  EXKeepAwake: b571c2ad8323b2fced6e907766e2549f75119471
-  Expo: 337c72b7e9314e93023af79c875930db8e008275
-  ExpoModulesCore: 64abda7af7cf659d2fa092934e29c6f4ea7e849f
+  EXJSONUtils: 5ee0d5cf76da70ad86f0be1a41cc70f47d69e06f
+  EXKeepAwake: bf48d7f740a5cd2befed6cf9a49911d385c6c47d
+  EXManifests: d3464cd2278f4a19cd80c1aa673231570b534c11
+  Expo: d9588796cd19999da4d440d87bf7eb7ae4dbd608
+  ExpoModulesCore: c9438f6add0fb7b04b7c64eb97a833d2752a7834
   EXSplashScreen: 7872675b95bb07c25f922b3d3dfae70c76fb5a00
+  EXStructuredHeaders: 873e7f329c2f6279c1b1e0229df59c9861560b53
+  EXUpdates: 061b67c33f0e7f8fd335bbb48697c4a4fc8a5157
+  EXUpdatesInterface: e1c01b4f5ec76bd1d6cc714938f9edf5ef6379b9
   FBLazyVector: c71c5917ec0ad2de41d5d06a5855f6d5eda06971
   FBReactNativeSpec: 6b910bbb232e47f99f33fafcf4882c0a7e26b8d7
   glog: 73c2498ac6884b13ede40eda8228cb1eee9d9d62
@@ -553,6 +585,6 @@ SPEC CHECKSUMS:
   WatermelonDB: e043b1a32ddc63864eb539b562e86ef80f8224cd
   Yoga: e6ecf3fa25af9d4c87e94ad7d5d292eedef49749
 
-PODFILE CHECKSUM: 76925264090591e7adf7d28819d7d1e98edb96de
+PODFILE CHECKSUM: 7fdd6586da8b516c56a1f43a6edea9e5951be7b9
 
 COCOAPODS: 1.10.1
