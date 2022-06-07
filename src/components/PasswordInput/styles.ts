@@ -11,7 +11,7 @@ interface Props {
 export const Container = styled.View`
     flex-direction: row;
     height: ${RFValue(34)}px;
-    margin-bottom: ${RFValue(10)}px;
+    margin-bottom: ${RFValue(10)}px; 
 `;
 
 export const InputText = styled(TextInput)<Props>`
