@@ -20,7 +20,7 @@ PODS:
     - ExpoModulesCore
   - ExpoModulesCore (0.4.10):
     - React-Core
-  - EXSplashScreen (0.14.1):
+  - EXSplashScreen (0.13.5):
     - ExpoModulesCore
     - React-Core
   - EXStructuredHeaders (2.0.0)
@@ -43,7 +43,7 @@ PODS:
   - hermes-engine (0.7.2)
   - libevent (2.1.12)
   - lottie-ios (3.2.3)
-  - lottie-react-native (5.0.1):
+  - lottie-react-native (4.0.3):
     - lottie-ios (~> 3.2.3)
     - React-Core
   - RCT-Folly (2020.01.13.00):
@@ -320,9 +320,9 @@ PODS:
     - React-cxxreact (= 0.64.3)
     - React-jsi (= 0.64.3)
     - React-perflogger (= 0.64.3)
-  - RNGestureHandler (2.1.2):
+  - RNGestureHandler (1.10.3):
     - React-Core
-  - RNReanimated (2.3.3):
+  - RNReanimated (2.2.4):
     - DoubleConversion
     - FBLazyVector
     - FBReactNativeSpec
@@ -348,9 +348,10 @@ PODS:
     - React-RCTNetwork
     - React-RCTSettings
     - React-RCTText
+    - React-RCTVibration
     - ReactCommon/turbomodule/core
     - Yoga
-  - RNScreens (3.10.2):
+  - RNScreens (3.8.0):
     - React-Core
     - React-RCTImage
   - RNSVG (12.1.1):
@@ -542,7 +543,7 @@ SPEC CHECKSUMS:
   EXManifests: d3464cd2278f4a19cd80c1aa673231570b534c11
   Expo: d9588796cd19999da4d440d87bf7eb7ae4dbd608
   ExpoModulesCore: c9438f6add0fb7b04b7c64eb97a833d2752a7834
-  EXSplashScreen: 7872675b95bb07c25f922b3d3dfae70c76fb5a00
+  EXSplashScreen: 57f329dbf25c5c12800feed79068a056453dc772
   EXStructuredHeaders: 873e7f329c2f6279c1b1e0229df59c9861560b53
   EXUpdates: 061b67c33f0e7f8fd335bbb48697c4a4fc8a5157
   EXUpdatesInterface: e1c01b4f5ec76bd1d6cc714938f9edf5ef6379b9
@@ -552,7 +553,7 @@ SPEC CHECKSUMS:
   hermes-engine: 7d97ba46a1e29bacf3e3c61ecb2804a5ddd02d4f
   libevent: 4049cae6c81cdb3654a443be001fb9bdceff7913
   lottie-ios: c058aeafa76daa4cf64d773554bccc8385d0150e
-  lottie-react-native: a029a86e1689c86a07169c520ae770e84348cd20
+  lottie-react-native: 96361a9891cf651534ea35c4f85f33d4cf14ed13
   RCT-Folly: ec7a233ccc97cc556cf7237f0db1ff65b986f27c
   RCTRequired: d34bf57e17cb6e3b2681f4809b13843c021feb6c
   RCTTypeSafety: 8dab4933124ed39bb0c1d88d74d61b1eb950f28f
@@ -577,14 +578,14 @@ SPEC CHECKSUMS:
   React-RCTVibration: c7f845861e79eae13dc1e8217a3cf47a3945b504
   React-runtimeexecutor: 493d9abb8b23c3f84e19ae221eeba92cadcb70dc
   ReactCommon: 8fea6422328e2fc093e25c9fac67adbcf0f04fb4
-  RNGestureHandler: 392653c717564ab35d6b322d7b56b10a54d88dbd
-  RNReanimated: 0e5ef4a7e4e79f84efbe5b40771c31044c51e7d0
-  RNScreens: d6da2b9e29cf523832c2542f47bf1287318b1868
+  RNGestureHandler: a479ebd5ed4221a810967000735517df0d2db211
+  RNReanimated: 024eff8202342abf4b24e11575a16afc441dabfe
+  RNScreens: 6e1ea5787989f92b0671049b808aef64fa1ef98c
   RNSVG: 551acb6562324b1d52a4e0758f7ca0ec234e278f
   simdjson: c96317b3a50dff3468a42f586ab7ed22c6ab2fd9
   WatermelonDB: e043b1a32ddc63864eb539b562e86ef80f8224cd
   Yoga: e6ecf3fa25af9d4c87e94ad7d5d292eedef49749
 
-PODFILE CHECKSUM: 7fdd6586da8b516c56a1f43a6edea9e5951be7b9
+PODFILE CHECKSUM: 42d54f9fc6a4b4785ce8927899c9016d317dfc6c
 
 COCOAPODS: 1.10.1

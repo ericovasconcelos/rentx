@@ -9,7 +9,7 @@ interface Props {
 export const Container = styled.View`
     flex-direction: row;
     height: ${RFValue(34)}px;
-    margin-bottom: ${RFValue(10)}px;
+    margin-bottom: ${RFValue(24)}px;
 
 
 `;
@@ -22,6 +22,7 @@ export const InputText = styled(TextInput)<Props>`
     font-size: ${RFValue(10)}px;
     font-family: ${({ theme }) => theme.fonts.primary_400};
     padding: 0 24px;
+    height: 56px;
 
     ${({ isFocus, theme }) => isFocus && css`
         border-bottom-width: 2px;
