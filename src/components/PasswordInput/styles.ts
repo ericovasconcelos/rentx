@@ -22,7 +22,7 @@ export const InputText = styled(TextInput)<Props>`
     font-size: ${RFValue(10)}px;
     font-family: ${({ theme }) => theme.fonts.primary_400};
     padding: 0 24px;
-    height: 56px;
+    height: ${RFValue(56)}px;
 
     ${({ isFocus, theme }) => isFocus && css`
         border-bottom-width: 2px;
@@ -32,8 +32,8 @@ export const InputText = styled(TextInput)<Props>`
 `;
 
 export const IconContainer = styled.View<Props>`
-    height: 56px;
-    width: 55px;
+    height: ${RFValue(56)}px;
+    width: ${RFValue(55)}px;
     justify-content: center;
     align-items: center;
 

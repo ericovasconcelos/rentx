@@ -26,20 +26,29 @@ export function Home() {
     const navigation = useNavigation<any>();
 
     useEffect(() => {
+        let isMounted = true;
+
         async function loadCars() {
             try {
                 const response = await api.get('/cars');
-                setCars(response.data);
+                if (isMounted) {
+                    setCars(response.data);
+                }
             } catch (error) {
                 console.log(error);
             } finally {
+                if (isMounted) {
                 setLoading(false);
+                }
             }
         }
         loadCars();
+        return () => {
+            isMounted = false;
+        }
     }, []);
 
-  
+
 
     function handleCarDetails(car: CarDTO) {
         navigation.navigate('CarDetails', { car });

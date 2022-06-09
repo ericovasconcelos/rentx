@@ -1,4 +1,4 @@
-import React, { useState} from 'react';
+import React, { useState, useEffect} from 'react';
 import {
     StatusBar,
     KeyboardAvoidingView,
@@ -12,6 +12,7 @@ import { Button } from '../../components/Button';
 import { Input } from '../../components/Input/input';
 import { PasswordInput } from '../../components/PasswordInput/input';
 import * as Yup from 'yup';
+
 
 import {
     Container,
@@ -58,6 +59,7 @@ export function SignIn() {
     const handleNewAccount = () => {
         navigation.navigate('SignUpFirstStep');
     }
+
 
     return (
         <KeyboardAvoidingView behavior='position' enabled>

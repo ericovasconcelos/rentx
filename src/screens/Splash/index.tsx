@@ -70,11 +70,11 @@ export function Splash() {
     return (
         <Container>
             <Animated.View style={[LogoAnimatedStyle, { position: 'absolute', }]}>
-                <LogoSvg width={80} height={50} />
+                <LogoSvg width={160} height={100} />
             </Animated.View>
 
             <Animated.View style={[BrandAnimatedStyle, { position: 'absolute', }]}>
-                <BrandSvg width={200} />
+                <BrandSvg width={400} />
             </Animated.View>
         </Container>
     );
