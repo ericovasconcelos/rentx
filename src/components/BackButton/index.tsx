@@ -6,6 +6,7 @@ import { BorderlessButtonProps } from 'react-native-gesture-handler';
 import {
     Container
 } from './styles';
+import { RFValue } from 'react-native-responsive-fontsize';
 
 interface Props extends BorderlessButtonProps {
     color?: string;
@@ -17,7 +18,7 @@ export function BackButton({color, ...rest}: Props) {
         <Container {...rest}>
             <MaterialIcons
                 name="chevron-left" 
-                size={24}
+                size={RFValue(24)}
                 color={color? color : theme.colors.text}
             />
         </Container>
