@@ -11,7 +11,7 @@ interface Props {
 export const Container = styled.View`
     flex-direction: row;
     height: ${RFValue(34)}px;
-    margin-bottom: ${RFValue(10)}px; 
+    margin-bottom: ${RFValue(24)}px; 
 `;
 
 export const InputText = styled(TextInput)<Props>`
@@ -21,7 +21,7 @@ export const InputText = styled(TextInput)<Props>`
     color: ${({ theme }) => theme.colors.text};
     font-size: ${RFValue(10)}px;
     font-family: ${({ theme }) => theme.fonts.primary_400};
-    padding: 0 24px;
+    padding: 0 ${RFValue(24)}px;
     height: ${RFValue(56)}px;
 
     ${({ isFocus, theme }) => isFocus && css`

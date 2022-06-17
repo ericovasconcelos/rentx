@@ -69,8 +69,15 @@ export function SignUpSecondStep() {
                 title: 'Conta criada!',
                 message: `Agora é só fazer login\ne aproveitar.`,
             });
-        }).catch(() => {
+        }).catch((error) => {
             Alert.alert('Opa', 'Algo deu errado, tente novamente');
+            console.log(error.message);
+            console.log( {
+                name: user.name,
+                email: user.email,
+                driver_license: user.driversLicense,
+                password
+            });
         });  
     }
 

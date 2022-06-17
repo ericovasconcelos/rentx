@@ -38,6 +38,7 @@ import { format } from 'date-fns';
 import { getPlatformDate } from '../../utils/getPlatformDate';
 import { Alert } from 'react-native';
 import { api } from '../../services/api';
+import { useNetInfo } from '@react-native-community/netinfo';
 
 
 interface Params {
@@ -53,45 +54,38 @@ interface RentalPeriod {
 
 export function SchedulingDetails() {
     const [rentalPeriod, setRentalPeriod] = useState<RentalPeriod>({} as RentalPeriod);
+    const [updatedCar, setUpdatedCar] = useState<CarDTO>({} as CarDTO);
     const [loading, setLoading] = useState(false);
+
+    const netInfo = useNetInfo(null);
     const theme = useTheme();
     const navigation = useNavigation<any>();
     const route = useRoute();
     const { car, dates } = route.params as Params;
 
-    
+
 
     const rentTotal = Number(dates.length * car.price);
 
     async function handleConfirmation() {
         setLoading(true);
-        const schedulesByCar = await api.get(`/schedules_bycars/${car.id}`);
 
-        const unavailable_dates = [
-            ...schedulesByCar.data.unavailable_dates,
-            ...dates,
-        ];
-
-        await api.post('schedules_byuser', { 
+        await api.post('rentals', {
             user_id: 1,
-            car,
-            startDate: format(getPlatformDate(new Date(dates[0])), 'dd/MM/yyyy'),
-            endDate: format(getPlatformDate(new Date(dates[dates.length - 1])), 'dd/MM/yyyy'),
-        })
-
-        api.put(`/schedules_bycars/${car.id}`, {
-            id: car.id,
-            unavailable_dates,
+            car_id: car.id,
+            start_date: new Date(dates[0]),
+            end_date: new Date(dates[dates.length - 1]),
+            total: rentTotal
         }).then(() => {
-            navigation.navigate('Confirmation',{ 
+            navigation.navigate('Confirmation', {
                 nextScreenRoute: 'Home',
                 title: 'Carro alugado!',
                 message: `Agora você só precisa ir\naté a concessionária da RENTX\n pegar o seu automóvel.`
             })
-        }).catch(() => {
-                Alert.alert('Não foi possível confirmar o agendamento.');
-                setLoading(false);
-            });
+        }).catch((error) => {
+            Alert.alert('Não foi possível confirmar o agendamento.');
+            setLoading(false);
+        });
     }
 
     const handleBack = () => {
@@ -105,6 +99,16 @@ export function SchedulingDetails() {
         });
     }, [dates]);
 
+    useEffect(() => {
+        async function fetchUpdatedCar() {
+            const response = await api.get(`cars/${car.id}`);
+            setUpdatedCar(response.data);
+        }
+        if (netInfo.isConnected === true) {
+            fetchUpdatedCar();
+        }
+    }, [netInfo.isConnected]);
+
     return (
         <Container>
             <Header>
@@ -113,7 +117,11 @@ export function SchedulingDetails() {
 
             <CarImage>
                 <ImageSlider
-                    imagesUrl={car.photos}
+                    imagesUrl={
+                        !!updatedCar.photos ?
+                            updatedCar.photos :
+                            [{ id: car.thumbnail, photo: car.thumbnail }]
+                    }
                 />
             </CarImage>
 
@@ -130,18 +138,13 @@ export function SchedulingDetails() {
                     </Rent>
                 </Details>
 
-                <Accessories>
-                    {
-                        car.accessories.map(accessory => (
-                            <Accessory
-                                key={accessory.type}
-                                name={accessory.name}
-                                icon={getAccessoryIcons(accessory.type)}
-                            />
-                        ))
-                    }
-
-                </Accessories>
+                {updatedCar.accessories &&
+                    <Accessories>
+                        {updatedCar.accessories.map(accessory =>
+                            <Accessory key={accessory.type} name={accessory.name} icon={getAccessoryIcons(accessory.type)} />
+                        )}
+                    </Accessories>
+                }
 
                 <RentalPeriod>
                     <CalendarIcon>
