@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { api } from '../../services/api';
 import { FlatList, StatusBar } from 'react-native';
 import { BackButton } from '../../components/BackButton';
 import { useTheme } from 'styled-components';
@@ -9,6 +8,7 @@ import { format, parseISO } from 'date-fns';
 import { AntDesign } from '@expo/vector-icons';
 import { LoadAnimation } from '../../components/LoadAnimation';
 import { Car as ModelCar} from '../../database/model/Car';
+import { api } from '../../services/api';
 
 import {
     Container,
