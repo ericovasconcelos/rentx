@@ -9,8 +9,8 @@ import { StatusBar } from 'react-native';
 import { getStatusBarHeight } from 'react-native-iphone-x-helper';
 import { CarDTO } from '../../dtos/CarDTO';
 import { Car as CarModel } from '../../database/model/Car';
-import { api } from '../../services/api';
 import { useNetInfo } from '@react-native-community/netinfo';
+import { api } from '../../services/api';
 
 import Animated, {
     useSharedValue,
